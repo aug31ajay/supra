@@ -13,7 +13,7 @@ jobs:
         run: |
           curl -s -o response.json -w "%{http_code}" \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?name=supraorigin" \
+            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin" \
             > http_code.txt
           
           HTTP_CODE=$(cat http_code.txt)
