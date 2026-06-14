@@ -9,19 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull latest code from GitHub to cPanel
-        run: |
-          RESPONSE=$(curl -s \
-            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin")
-          echo "Pull response: $RESPONSE"
-
-      - name: Wait for pull to complete
-        run: sleep 15
-
-      - name: Deploy to public_html
-        run: |
-          RESPONSE=$(curl -s \
-            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControlDeployment/create?repository_root=/home/pndmddgq/repositories/supraorigin")
-          echo "Deploy response: $RESPONSE"
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/pndmddgq/repositories/supraorigin
+            git pull origin main
+            cp -R * /home/pndmddgq/public_html/
+            rm -f /home/pndmddgq/public_html/.cpanel.yml
+            rm -f /home/pndmddgq/public_html/README.md
+            echo "Deployed successfully!"
