@@ -9,16 +9,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull latest code on cPanel
+      - name: Pull latest code from GitHub to cPanel
         run: |
-          curl -s \
+          RESPONSE=$(curl -s \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin"
-          echo "Pull done"
+            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin")
+          echo "Pull response: $RESPONSE"
+
+      - name: Wait for pull to complete
+        run: sleep 15
 
       - name: Deploy to public_html
         run: |
-          curl -s \
+          RESPONSE=$(curl -s \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControlDeployment/create?repository_root=/home/pndmddgq/repositories/supraorigin"
-          echo "Deploy triggered!"
+            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControlDeployment/create?repository_root=/home/pndmddgq/repositories/supraorigin")
+          echo "Deploy response: $RESPONSE"
