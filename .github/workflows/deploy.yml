@@ -9,19 +9,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger cPanel Deployment
+      - name: Pull latest code on cPanel
         run: |
-          curl -s -o response.json -w "%{http_code}" \
+          curl -s \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
-            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin" \
-            > http_code.txt
-          
-          HTTP_CODE=$(cat http_code.txt)
-          echo "HTTP Status: $HTTP_CODE"
-          cat response.json
-          
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "Deployment failed!"
-            exit 1
-          fi
-          echo "Deployment triggered successfully!"
+            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControl/update?repository_root=/home/pndmddgq/repositories/supraorigin"
+          echo "Pull done"
+
+      - name: Deploy to public_html
+        run: |
+          curl -s \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
+            "https://${{ secrets.CPANEL_DOMAIN }}:2083/execute/VersionControlDeployment/create?repository_root=/home/pndmddgq/repositories/supraorigin"
+          echo "Deploy triggered!"
