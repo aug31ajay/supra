@@ -204,7 +204,7 @@ https://wa.me/918954332282?text=Hi%2C%20I%27m%20interested%20in%20Supra%20Origin
 | 7 | `#services` | Services (9 cards) | 2 new "India Market" badge cards added (RFID + Biometric) |
 | 8 | `#technologies` | Tech stack grid | Unchanged |
 | 9 | `#industries` | Industries served | Unchanged |
-| 10 | `#global-reach` | Countries We Serve strip (flags: US, UK, AU, CA, SG, IN) | **NEW** — replaced banner slider + attendance teaser |
+| 10 | — | `#global-reach` strip REMOVED — false "Trusted by Clients Across" claim not appropriate for a startup | **REMOVED** |
 | 11 | `#why-us` | Why Choose Us (6 cards) | Last card updated to "Global-Ready Delivery" |
 | 12 | `#insights` | Article teasers (3 cards) | **NEW** — SEO keyword density section |
 | 13 | `#faq` | FAQ (6 items) | Replaced India-only Q&As with global + India mix |
@@ -559,4 +559,4 @@ Live at https://www.supraorigin.com
 
 ---
 
-*Last updated: 2026-06-15 · Updated: Services dropdown on all pages; medical-services.html created; attendance nav updated; sitemap updated with medical page; plan sections added for medical page, healthcare SEO keywords*
+*Last updated: 2026-06-15 · Updated: Removed #global-reach "Trusted by Clients Across" strip and all false country/client count claims; hero mini-stats changed to Full-Stack / Technologies / Global Delivery / Free Consult; hero sub-text, services subtitle, Why Us card, FAQ answers, footer, top bar all rewritten to honest capability statements*
