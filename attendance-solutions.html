@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RFID Attendance Systems, Biometric Attendance Devices, Smart ID Cards and Attendance Management Software by Supra Origin AI. Pan India installation &amp; support. Free site assessment." />
-  <meta name="keywords" content="RFID Attendance System, Biometric Attendance System, Smart Attendance System, RFID Cards Supplier India, RFID Card Printing, Attendance Management Software, Employee Attendance Tracking, Workforce Management, Access Control System, School Attendance System, Office Attendance System" />
+  <meta name="description" content="RFID smart ID cards, biometric attendance devices, and attendance management software for schools, corporates &amp; manufacturing units across India. Pan-India installation. Call +91-89543-32272." />
+  <meta name="keywords" content="RFID attendance system India, biometric device supplier, smart ID card printing, attendance management software, RFID card bulk, school attendance system, corporate biometric attendance, Supra Origin AI" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.supraorigin.com/attendance-solutions.html" />
-  <title>RFID &amp; Biometric Attendance Systems | Smart ID Cards | Supra Origin AI</title>
+  <title>RFID Attendance System &amp; Biometric Devices — Supra Origin AI India</title>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -23,18 +23,25 @@
   <meta name="twitter:description" content="RFID attendance systems, biometric devices, smart ID card printing and attendance management software. Pan India service. Free site assessment." />
   <meta name="twitter:image" content="https://www.supraorigin.com/Images/Banner.jpeg" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo/logo-transparent-png.png" />
+  <link rel="apple-touch-icon" href="/logo/logo-transparent-png.png" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#2563eb" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SQW40RNQ8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-2SQW40RNQ8');
     function trackEvent(action, category, label) {
       if (typeof gtag === 'function') gtag('event', action, {event_category: category, event_label: label});
     }
@@ -223,6 +230,30 @@
       display: block; width: 24px; height: 2px;
       background: var(--text); border-radius: 2px; transition: all var(--transition);
     }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+    .dd-chevron { font-size: 8px; color: var(--muted); transition: transform var(--transition); }
+    .nav-dropdown:hover .dd-chevron { transform: rotate(180deg); color: var(--purple); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 12px); left: 50%;
+      transform: translateX(-50%) translateY(-6px); min-width: 290px;
+      background: #fff; border: 1px solid rgba(37,99,235,0.1); border-radius: 16px;
+      box-shadow: 0 16px 56px rgba(37,99,235,0.18); padding: 12px;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; z-index: 2000;
+    }
+    .dropdown-menu::before { content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-bottom: 7px solid rgba(37,99,235,0.1); }
+    .dropdown-menu::after  { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-bottom: 5px solid #fff; }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dd-group-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); padding: 6px 12px 4px; }
+    .dd-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; transition: background var(--transition), color var(--transition); white-space: nowrap; }
+    .dd-item:hover { background: rgba(37,99,235,0.06); color: var(--purple); }
+    .dd-item i { width: 18px; text-align: center; flex-shrink: 0; font-size: 13px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .dd-item.dd-pill { background: rgba(14,165,233,0.06); }
+    .dd-item.dd-pill:hover { background: rgba(14,165,233,0.14); color: #0369a1; }
+    .dd-item.dd-active { background: rgba(37,99,235,0.08); color: var(--purple); font-weight: 600; }
+    .dd-divider { height: 1px; background: rgba(37,99,235,0.08); margin: 6px 8px; }
 
     /* ============================================================
        HERO (DARK)
@@ -673,6 +704,20 @@
       }
       .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
       .nav-links a { padding: 11px 16px; text-align: center; display: block; }
+      .nav-dropdown { width: 100%; position: static; }
+      .nav-dropdown > a { justify-content: space-between; }
+      .dd-chevron { font-size: 11px; }
+      .dropdown-menu {
+        position: static !important; transform: none !important; box-shadow: none;
+        border: 1px solid rgba(37,99,235,0.1); background: rgba(37,99,235,0.03);
+        border-radius: 10px; margin: 4px 0 6px; padding: 6px;
+        opacity: 0; max-height: 0; overflow: hidden; pointer-events: none;
+        transition: opacity 0.3s ease, max-height 0.35s ease;
+      }
+      .dropdown-menu::before, .dropdown-menu::after { display: none; }
+      .nav-dropdown.dd-open .dropdown-menu { opacity: 1; max-height: 600px; pointer-events: auto; }
+      .nav-dropdown.dd-open .dd-chevron { transform: rotate(180deg); color: var(--purple); }
+      .dd-item { white-space: normal; }
     }
     @media (max-width: 640px) {
       .process-track { grid-template-columns: 1fr; gap: 28px; }
@@ -890,7 +935,23 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
+      <li class="nav-dropdown" id="servicesDropdown">
+        <a href="index.html#services" onclick="if(window.innerWidth<=768){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('dd-open');}">Services <i class="fas fa-chevron-down dd-chevron"></i></a>
+        <div class="dropdown-menu">
+          <div class="dd-group-label">AI &amp; Technology</div>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-brain"></i> Artificial Intelligence</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-cogs"></i> Machine Learning</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-laptop-code"></i> Custom Software</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-globe"></i> Web Applications</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-mobile-alt"></i> Mobile Apps</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-cloud"></i> Cloud Solutions</a>
+          <a href="index.html#services" class="dd-item" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-chart-bar"></i> Data Analytics</a>
+          <div class="dd-divider"></div>
+          <div class="dd-group-label">Industry Solutions</div>
+          <a href="medical-services.html" class="dd-item dd-pill" onclick="if(document.getElementById('navLinks').classList.contains('open')){toggleNav();}"><i class="fas fa-heartbeat"></i> Medical Domain</a>
+          <a href="attendance-solutions.html" class="dd-item dd-active"><i class="fas fa-id-card"></i> RFID Attendance</a>
+        </div>
+      </li>
       <li><a href="#services" class="active">Attendance Solutions</a></li>
       <li><a href="#contact" class="nav-cta">Get Quote</a></li>
     </ul>
@@ -1265,7 +1326,7 @@
       <a href="#contact" class="btn-white">
         <i class="fas fa-phone"></i> Call Us Now
       </a>
-      <a href="https://wa.me/918954332272?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Smart%20Attendance%20%26%20ID%20Card%20Solutions." target="_blank" rel="noopener" class="whatsapp-btn" style="margin-top:0;">
+      <a href="https://wa.me/918954332272?text=Hi%2C%20I%27m%20interested%20in%20your%20RFID%20%2F%20Biometric%20Attendance%20solutions." target="_blank" rel="noopener" class="whatsapp-btn" style="margin-top:0;">
         <i class="fab fa-whatsapp"></i> WhatsApp Us
       </a>
     </div>
@@ -1356,12 +1417,9 @@
           <div class="ci-item">
             <div class="ci-ico"><i class="fas fa-phone"></i></div>
             <div class="ci-detail">
-              <h5>Call Us</h5>
-              <span>
-                <a href="tel:+918954332272">+91 89543 32272</a>
-                &nbsp;/&nbsp;
-                <a href="tel:+918954332282">+91 89543 32282</a>
-              </span>
+              <h5>Call Us (Attendance Enquiries)</h5>
+              <span><a href="tel:+918954332272" onclick="trackEvent('phone_click','contact','+918954332272')">+91 89543 32272</a></span>
+              <span style="font-size:11px;display:block;color:var(--muted);margin-top:2px;">General enquiries: <a href="tel:+918954332282" style="color:var(--muted);text-decoration:none;" onclick="trackEvent('phone_click','contact','+918954332282')">+91 89543 32282</a></span>
             </div>
           </div>
           <div class="ci-item">
@@ -1387,7 +1445,7 @@
           </div>
         </div>
 
-        <a href="https://wa.me/918954332272?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Smart%20Attendance%20%26%20ID%20Card%20Solutions." target="_blank" rel="noopener" class="whatsapp-btn">
+        <a href="https://wa.me/918954332272?text=Hi%2C%20I%27m%20interested%20in%20your%20RFID%20%2F%20Biometric%20Attendance%20solutions." target="_blank" rel="noopener" class="whatsapp-btn" onclick="trackEvent('whatsapp_click','engagement','contact_section')">
           <i class="fab fa-whatsapp" style="font-size:20px"></i> Chat on WhatsApp
         </a>
       </div>
@@ -1498,7 +1556,9 @@
       <h4>Contact</h4>
       <ul class="ft-links">
         <li><i class="fas fa-phone" style="margin-right:6px;color:#0ea5e9"></i><a href="tel:+918954332272">+91 89543 32272</a></li>
+        <li style="font-size:12px;color:#475569;padding-left:20px;">Attendance enquiries</li>
         <li><i class="fas fa-phone" style="margin-right:6px;color:#0ea5e9"></i><a href="tel:+918954332282">+91 89543 32282</a></li>
+        <li style="font-size:12px;color:#475569;padding-left:20px;">General / other queries</li>
         <li><i class="fas fa-envelope" style="margin-right:6px;color:#0ea5e9"></i><a href="mailto:thesupraoriginai@gmail.com">thesupraoriginai@gmail.com</a></li>
         <li><i class="fas fa-globe" style="margin-right:6px;color:#0ea5e9"></i><a href="https://www.supraorigin.com" target="_blank" rel="noopener">www.supraorigin.com</a></li>
       </ul>
@@ -1522,7 +1582,7 @@
 
 <!-- Floating WhatsApp Button -->
 <a id="wa-float"
-   href="https://wa.me/918954332272?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Smart%20Attendance%20%26%20ID%20Card%20Solutions."
+   href="https://wa.me/918954332272?text=Hi%2C%20I%27m%20interested%20in%20your%20RFID%20%2F%20Biometric%20Attendance%20solutions."
    target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
    onclick="trackEvent('whatsapp_click','engagement','floating_button')">
   <i class="fab fa-whatsapp"></i>

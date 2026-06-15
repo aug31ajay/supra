@@ -23,4 +23,6 @@ jobs:
             cp -R * /home/pndmddgq/public_html/
             rm -f /home/pndmddgq/public_html/.cpanel.yml
             rm -f /home/pndmddgq/public_html/README.md
+            rm -rf /home/pndmddgq/public_html/feature/
+            rm -rf /home/pndmddgq/public_html/.claude/
             echo "Deployed successfully!"
